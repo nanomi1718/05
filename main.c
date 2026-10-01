@@ -4,43 +4,28 @@
 
 int main(void) 
 {
-   int num1,num2;
-   char op;
-   int res;
+  	int answer=80;
+	int num;
+	int trials=0;
+	
+	do
+	{
+        printf("guess the number: ");
+        scanf("%i", &num);
+        
+        if (num < answer)
+            printf("low!\n");
+        else if (num > answer)
+		    printf("high!\n");
+            
+        trials++;
+    }
+    
+    while(num != answer);
 
-   printf("enter the calculation  : ");
-   scanf("%i %c %i", &num1, &op, &num2);
-
-   if (op == '+')
-   {
-      res = num1 + num2;
-      printf("result is : %i\n", res);
-   }
-   else if (op == '-')
-   {
-      res = num1 - num2;
-      printf("result is : %i\n", res);
-   }
-   else if (op == '*')
-   {
-      res = num1 * num2;
-      printf("result is : %i\n", res);
-   }
-   else if (op == '/')
-   {
-      if (num2 == 0)
-         printf("cannot divide by zero\n");
-      else
-      {
-         res = num1 / num2;
-         printf("result is : %i\n", res);
-      }
-   }
-   else
-   {
-      printf("invalid operator\n");
-   }
-   
-   return 0;
+	printf("congratulation! trials: %i\n", trials);
+	
+    return 0;
 
 }
+
