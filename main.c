@@ -4,19 +4,43 @@
 
 int main(void) 
 {
-   int num;
-   int sum=0;
-   int i;
+   int num1,num2;
+   char op;
+   int res;
 
-   printf("input a number : ");
-   scanf("%i", &num);
-   
-   for (i=1; i<=num; i++)
-   { 
-    sum= sum+i;
+   printf("enter the calculation  : ");
+   scanf("%i %c %i", &num1, &op, &num2);
+
+   if (op == '+')
+   {
+      res = num1 + num2;
+      printf("result is : %i\n", res);
    }
-		
-	printf("the result is %i\n", sum);
-	
-    return 0;
+   else if (op == '-')
+   {
+      res = num1 - num2;
+      printf("result is : %i\n", res);
+   }
+   else if (op == '*')
+   {
+      res = num1 * num2;
+      printf("result is : %i\n", res);
+   }
+   else if (op == '/')
+   {
+      if (num2 == 0)
+         printf("cannot divide by zero\n");
+      else
+      {
+         res = num1 / num2;
+         printf("result is : %i\n", res);
+      }
+   }
+   else
+   {
+      printf("invalid operator\n");
+   }
+   
+   return 0;
+
 }
